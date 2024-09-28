@@ -1,0 +1,51 @@
+#Options
+GenerateScanner = true
+GenerateParser = true
+Language = Java
+ScannerName = Lexico
+ParserName = Sintatico
+SemanticName = Semantico
+Package = gals
+ScannerCaseSensitive = true
+ScannerTable = Compact
+Input = Stream
+Parser = SLR
+#RegularDefinitions
+
+#Tokens
+// Tokens de Calculos
+soma: \+
+subtracao: \-
+multiplicacao: \*
+divisao: /
+exponenciacao: \*\*
+log: log
+
+// Tokens Gerais
+imprimir: "show"
+igual: "="
+openPar: "("
+closePar: ")"
+eol: ";"
+variavel: [a-zA-z]+
+numeros: [0-1]+
+ : [\ \n\t\r\s]+
+
+#NonTerminals
+<lista_comandos>
+<comando>
+<calculos>
+<calculo>
+<valor>
+<funcao>
+#Grammar
+<lista_comandos> ::= <comando> <lista_comandos> | <comando>;
+<comando> ::= imprimir openPar <calculos> closePar eol #1| variavel #2 igual <calculos> eol #3;
+<calculos> ::= <calculos> <calculo> |  <valor>;
+<calculo> ::= soma <valor> #4
+	| subtracao <valor> #5  
+	| multiplicacao <valor> #6
+	| divisao <valor> #7
+	| exponenciacao  <valor> #8;
+<funcao> ::= log  openPar <valor> closePar #9;
+<valor> ::= numeros #10 | variavel #11 | <funcao>;
