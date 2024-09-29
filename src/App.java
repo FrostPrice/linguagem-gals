@@ -9,7 +9,8 @@ public class App {
         App app = new App();
         File f = new File("src/code.txt");
         String text = app.readFile(f);
-        System.out.println("Codigo da Arquivo:\n" + text);
+        System.out.println("Codigo da Arquivo:\n\n" + text + "\n");
+        System.out.println("/////////////////////////////////////////////\n");
 
         try {
             Lexico lexico = new Lexico(new java.io.StringReader(text));

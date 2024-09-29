@@ -27,7 +27,7 @@ igual: "="
 openPar: "("
 closePar: ")"
 eol: ";"
-variavel: [a-zA-z]+
+variavel: [a-zA-Z]+
 numeros: [0-1]+
  : [\ \n\t\r\s]+
 
@@ -40,10 +40,10 @@ numeros: [0-1]+
 <funcao>
 #Grammar
 <lista_comandos> ::= <comando> <lista_comandos> | <comando>;
-<comando> ::= imprimir openPar <calculos> closePar eol #1| variavel #2 igual <calculos> eol #3;
-<calculos> ::= <calculos> <calculo> |  <valor>;
+<comando> ::= imprimir openPar variavel closePar eol #1| variavel #2 igual <calculos> eol #3;
+<calculos> ::= <calculos> <calculo> | <valor>;
 <calculo> ::= soma <valor> #4
-	| subtracao <valor> #5  
+	| subtracao <valor> #5
 	| multiplicacao <valor> #6
 	| divisao <valor> #7
 	| exponenciacao  <valor> #8;

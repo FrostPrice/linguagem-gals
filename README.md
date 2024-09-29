@@ -18,6 +18,31 @@ B = 111 + A * B;
 Show ( B );
 ```
 
+## Exemplo de saída
+
+```txt
+A = 10;
+B = 11;
+B = 111 + A * B;
+show ( B );
+// Resultado: 11011
+
+A = log(1100100);
+show(A);
+// Resultado: 10
+B = A * 10;
+show ( B );
+// Resultado: 100
+C = 10 ** 11;
+show(C);
+// Resultado: 1000
+
+A = 1;
+B = 1 - A;
+show ( B );
+// Resultado: 0
+```
+
 ## Gramática
 
 ```txt
