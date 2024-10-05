@@ -18,6 +18,8 @@ B = 111 + A * B;
 Show ( B );
 ```
 
+OBS: Não se esqueça da virgula no final de cada comando.
+
 ## Exemplo de saída
 
 ```txt
@@ -25,7 +27,7 @@ A = 10;
 B = 11;
 B = 111 + A * B;
 show ( B );
-// Resultado: 11011
+// Resultado: 1101
 
 A = log(1100100);
 show(A);

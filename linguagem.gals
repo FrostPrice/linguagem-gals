@@ -42,10 +42,10 @@ numeros: [0-1]+
 <lista_comandos> ::= <comando> <lista_comandos> | <comando>;
 <comando> ::= imprimir openPar variavel closePar eol #1| variavel #2 igual <calculos> eol #3;
 <calculos> ::= <calculos> <calculo> | <valor>;
-<calculo> ::= soma <valor> #4
-	| subtracao <valor> #5
-	| multiplicacao <valor> #6
-	| divisao <valor> #7
-	| exponenciacao  <valor> #8;
-<funcao> ::= log  openPar <valor> closePar #9;
-<valor> ::= numeros #10 | variavel #11 | <funcao>;
+<calculo> ::= soma #4 <valor>
+	| subtracao #4 <valor>
+	| multiplicacao #4 <valor>
+	| divisao #4 <valor>
+	| exponenciacao #4 <valor>;
+<funcao> ::= log #4 openPar #7 <calculos> closePar #8;
+<valor> ::= numeros #5 | variavel #6 | openPar #7 <calculos> closePar #8 | <funcao>;
