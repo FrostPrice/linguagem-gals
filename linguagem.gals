@@ -40,7 +40,7 @@ numeros: [0-1]+
 <funcao>
 #Grammar
 <lista_comandos> ::= <comando> <lista_comandos> | <comando>;
-<comando> ::= imprimir openPar variavel closePar eol #1| variavel #2 igual <calculos> eol #3;
+<comando> ::= imprimir openPar variavel #2 closePar eol #1| variavel #2 igual <calculos> eol #3;
 <calculos> ::= <calculos> <calculo> | <valor>;
 <calculo> ::= soma #4 <valor>
 	| subtracao #4 <valor>
